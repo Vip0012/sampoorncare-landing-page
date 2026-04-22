@@ -1,414 +1,428 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>SampoornCare Membership Plans</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SampoornCare Premium Membership</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
---primary:#0d6efd;
---green:#19b394;
---purple:#5a38ff;
---dark:#132238;
---muted:#6b7280;
---bg:#f5f7fb;
---white:#fff;
---shadow:0 10px 30px rgba(0,0,0,.08);
---radius:18px;
+--bg:#07111f;
+--card:#101d31;
+--line:rgba(255,255,255,.08);
+--text:#eef4ff;
+--muted:#9fb0c8;
+--grad1:linear-gradient(135deg,#00c6ff,#0072ff);
+--grad2:linear-gradient(135deg,#22c55e,#14b8a6);
+--grad3:linear-gradient(135deg,#7c3aed,#2563eb);
+--shadow:0 20px 60px rgba(0,0,0,.35);
+--radius:24px;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
 margin:0;
-font-family:Inter,Arial,sans-serif;
-background:var(--bg);
-color:#111827;
-line-height:1.6;
+font-family:Inter,sans-serif;
+background:
+radial-gradient(circle at 20% 20%,rgba(0,114,255,.15),transparent 30%),
+radial-gradient(circle at 80% 10%,rgba(124,58,237,.18),transparent 30%),
+#07111f;
+color:var(--text);
 }
 
 .container{
-width:min(1120px,92%);
+width:min(1180px,92%);
 margin:auto;
 }
 
-h1,h2,h3{
-margin:0 0 12px;
-line-height:1.2;
-}
-
-p{color:var(--muted)}
-
-a{text-decoration:none}
-
-.btn{
-display:inline-block;
-padding:14px 26px;
-border-radius:12px;
-font-weight:700;
-transition:.25s;
-}
-
-.btn-primary{
-background:var(--primary);
-color:#fff;
-}
-
-.btn-primary:hover{
-transform:translateY(-2px);
-}
-
-.btn-light{
-background:#fff;
-color:#111;
-}
-
-.btn-whatsapp{
-background:#25D366;
-color:#fff;
-}
-
 section{
-padding:70px 0;
+padding:90px 0;
+}
+
+h1,h2,h3{
+line-height:1.1;
+margin:0 0 14px;
+}
+
+p{
+color:var(--muted);
 }
 
 /* NAV */
-.nav{
+nav{
 position:sticky;
 top:0;
-z-index:1000;
-background:#fff;
-box-shadow:0 1px 10px rgba(0,0,0,.05);
+backdrop-filter:blur(14px);
+background:rgba(7,17,31,.7);
+border-bottom:1px solid var(--line);
+z-index:999;
 }
 
-.nav-wrap{
+.nav{
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:14px 0;
+align-items:center;
+padding:16px 0;
 }
 
 .logo{
-font-size:28px;
-font-weight:800;
-color:var(--green);
+font-size:30px;
+font-weight:900;
+background:var(--grad2);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .menu{
 display:flex;
-gap:28px;
-align-items:center;
+gap:30px;
 }
 
 .menu a{
-color:#111;
+color:#dbeafe;
 font-weight:600;
+text-decoration:none;
+}
+
+.btn{
+display:inline-block;
+padding:15px 26px;
+border-radius:14px;
+font-weight:800;
+text-decoration:none;
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.primary{
+background:var(--grad1);
+color:white;
+box-shadow:0 10px 30px rgba(0,114,255,.3);
+}
+
+.ghost{
+border:1px solid var(--line);
+color:white;
 }
 
 /* HERO */
 .hero{
-background:
-linear-gradient(135deg,#eef7ff,#eefcf7);
-padding:90px 0;
+padding-top:120px;
 }
 
 .hero-grid{
 display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:40px;
+grid-template-columns:1.1fr .9fr;
+gap:55px;
 align-items:center;
 }
 
-.hero h1{
-font-size:56px;
-font-weight:800;
-}
-
-.badge{
+.tag{
 display:inline-block;
-padding:8px 14px;
+padding:10px 16px;
+border:1px solid var(--line);
 border-radius:30px;
-background:#e8f2ff;
-color:var(--primary);
-font-weight:700;
-margin-bottom:18px;
+margin-bottom:20px;
 }
 
-.hero-card{
-background:#fff;
-padding:35px;
-border-radius:24px;
+.hero h1{
+font-size:68px;
+font-weight:900;
+}
+
+.hero p{
+font-size:20px;
+max-width:680px;
+}
+
+.hero-box{
+background:rgba(16,29,49,.8);
+backdrop-filter:blur(14px);
+border:1px solid var(--line);
+padding:34px;
+border-radius:28px;
 box-shadow:var(--shadow);
 }
 
-.hero-card ul{
-padding-left:18px;
+.metric{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-top:25px;
 }
 
-/* Feature cards */
-.grid-3{
+.metric div{
+background:#0d182b;
+padding:22px;
+border-radius:18px;
+text-align:center;
+border:1px solid var(--line);
+}
+
+.metric strong{
+display:block;
+font-size:28px;
+}
+
+/* BENEFITS */
+.grid3{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:26px;
 }
 
-.card{
-background:#fff;
-padding:34px 28px;
-border-radius:var(--radius);
+.glass{
+background:rgba(16,29,49,.75);
+border:1px solid var(--line);
+backdrop-filter:blur(12px);
+border-radius:26px;
+padding:34px;
 box-shadow:var(--shadow);
 }
 
 .icon{
-font-size:44px;
-margin-bottom:10px;
+width:68px;
+height:68px;
+border-radius:18px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+margin-bottom:18px;
+background:var(--grad1);
 }
 
-/* Plans */
-.plan-grid{
+/* PLANS */
+.plans{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:1fr 1fr;
 gap:28px;
 }
 
 .plan{
-color:#fff;
 padding:38px;
-border-radius:24px;
+border-radius:30px;
 box-shadow:var(--shadow);
+color:white;
 }
 
 .smart{
-background:linear-gradient(135deg,#18b58f,#23c5a0);
+background:var(--grad2);
 }
 
 .elite{
-background:linear-gradient(135deg,#5a38ff,#2f8cff);
+background:var(--grad3);
 }
 
 .price{
-font-size:64px;
+font-size:72px;
 font-weight:900;
-margin:12px 0;
+margin:18px 0;
 }
 
-.plan ul{
-padding-left:18px;
-color:#fff;
+ul{
+padding-left:20px;
 }
 
-.plan li{
-margin:12px 0;
+li{
+margin:14px 0;
 }
 
-/* Table */
-.table-wrap{
+.ribbon{
+display:inline-block;
+background:rgba(255,255,255,.18);
+padding:8px 14px;
+border-radius:20px;
+font-size:14px;
+font-weight:700;
+}
+
+/* Comparison */
+.compare{
 overflow:auto;
-background:#fff;
-border-radius:18px;
+border-radius:26px;
 box-shadow:var(--shadow);
+border:1px solid var(--line);
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-min-width:720px;
+min-width:760px;
+background:#0d182b;
 }
 
 th{
-background:#17355c;
-color:#fff;
-padding:18px;
+background:#12233d;
+padding:22px;
 text-align:left;
 }
 
 td{
-padding:18px;
-border-bottom:1px solid #e5e7eb;
-}
-
-.check{color:green;font-weight:800}
-.cross{color:#dc2626;font-weight:800}
-
-/* Steps */
-.steps{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:22px;
+padding:20px;
+border-top:1px solid var(--line);
 }
 
 /* CTA */
 .cta{
-background:linear-gradient(135deg,#17355c,#0d6efd);
-color:#fff;
-border-radius:28px;
-padding:50px;
-box-shadow:var(--shadow);
 text-align:center;
+padding:70px;
+border-radius:34px;
+background:linear-gradient(135deg,#0d6efd,#7c3aed);
+box-shadow:var(--shadow);
 }
 
-.cta p{color:#dbeafe}
-
-/* Footer */
+/* FOOTER */
 footer{
-background:#0f172a;
-color:#cbd5e1;
+border-top:1px solid var(--line);
 padding:40px 0;
+color:#94a3b8;
 margin-top:60px;
 }
 
-/* Mobile */
-@media(max-width:900px){
-.hero-grid,.plan-grid{
+/* mobile */
+@media(max-width:950px){
+.hero-grid,.plans,.grid3{
 grid-template-columns:1fr;
-}
-.grid-3{
-grid-template-columns:1fr;
-}
-.steps{
-grid-template-columns:1fr 1fr;
 }
 .hero h1{
-font-size:40px;
+font-size:46px;
 }
 .menu{
 display:none;
-}
-}
-
-@media(max-width:600px){
-.steps{
-grid-template-columns:1fr;
-}
-.hero h1{
-font-size:34px;
-}
-.price{
-font-size:50px;
 }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-<div class="container nav-wrap">
+<nav>
+<div class="container nav">
 <div class="logo">SampoornCare</div>
 
 <div class="menu">
 <a href="#benefits">Benefits</a>
 <a href="#plans">Plans</a>
 <a href="#compare">Compare</a>
-<a href="#how">How It Works</a>
-<a href="#join">Join Now</a>
 </div>
 
-<a class="btn btn-primary" href="#join">
-JOIN NOW
+<a class="btn primary" href="#join">
+Join Now
 </a>
 
 </div>
 </nav>
 
-<!-- HERO -->
+
 <section class="hero">
 <div class="container hero-grid">
 
 <div>
-<span class="badge">
-One Card. Multiple Benefits.
+<span class="tag">
+Premium Membership Ecosystem
 </span>
 
 <h1>
-Save on Medicines, Healthcare & Agriculture Services
+One Card.<br>
+Trusted Savings.<br>
+Premium Benefits.
 </h1>
 
 <p>
-Affordable membership plans designed for families, farmers and value-seeking households.
+Affordable membership access for medicines, diagnostics, hospital support and agriculture benefits.
 </p>
 
-<div style="margin-top:25px">
-<a class="btn btn-primary" href="#plans">
-View Plans
-</a>
+<div style="margin-top:28px">
+<a class="btn primary" href="#plans">Explore Plans</a>
+<a class="btn ghost" href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+</div>
 
-<a class="btn btn-whatsapp"
-href="https://wa.me/91XXXXXXXXXX">
-WhatsApp
-</a>
+<div class="metric">
+<div>
+<strong>50%</strong>
+Savings
+</div>
+
+<div>
+<strong>1 Year</strong>
+Validity
+</div>
+
+<div>
+<strong>24/7</strong>
+Support
+</div>
 </div>
 
 </div>
 
-<div class="hero-card">
+<div class="hero-box">
 <h3>Membership Highlights</h3>
 
-<ul>
-<li>Medical Store Discounts</li>
-<li>Diagnostic Benefits</li>
-<li>Hospital Benefits (Elite)</li>
-<li>Agriculture Support</li>
-<li>1 Year Validity</li>
-</ul>
+<div class="glass">
+✔ Medical Store Benefits<br><br>
+✔ Diagnostic Discounts<br><br>
+✔ Hospital Benefits (Elite)<br><br>
+✔ Agriculture Support
+</div>
 
 </div>
 
 </div>
 </section>
 
-<!-- WHY BUY -->
+
 <section id="benefits">
 <div class="container">
-
-<h2 style="text-align:center;font-size:44px">
-Why People Buy This Card
+<h2 style="font-size:52px;text-align:center">
+Why Members Choose SampoornCare
 </h2>
 
-<p style="text-align:center">
-Save money on medicines, hospital services and agriculture products.
-</p>
+<div class="grid3" style="margin-top:40px">
 
-<div class="grid-3" style="margin-top:35px">
-
-<div class="card">
+<div class="glass">
 <div class="icon">💊</div>
-<h3>Save On Medicines</h3>
-<p>Reduce costs through partner medical stores.</p>
+<h3>Medicine Savings</h3>
+<p>Save on partner medical stores and routine healthcare spending.</p>
 </div>
 
-<div class="card">
+<div class="glass">
 <div class="icon">🏥</div>
 <h3>Hospital Discounts</h3>
-<p>Benefits on consultations, diagnostics and charges.</p>
+<p>Elite members access advanced health benefits and support.</p>
 </div>
 
-<div class="card">
+<div class="glass">
 <div class="icon">🌱</div>
 <h3>Agriculture Benefits</h3>
-<p>Support on seeds, fertilizer and agriculture inputs.</p>
+<p>Support on inputs and allied services through partners.</p>
 </div>
 
 </div>
-
 </div>
 </section>
 
-<!-- PLANS -->
+
 <section id="plans">
 <div class="container">
-
-<h2 style="text-align:center;font-size:44px">
+<h2 style="font-size:52px;text-align:center">
 Membership Plans
 </h2>
 
-<div class="plan-grid" style="margin-top:35px">
+<div class="plans" style="margin-top:40px">
 
 <div class="plan smart">
+<span class="ribbon">Smart Membership</span>
+
 <h3>SampoornCare Smart Card</h3>
+
 <div class="price">₹50</div>
-<p style="color:#fff">1 Year Validity</p>
 
 <ul>
 <li>Medical Store Discount</li>
@@ -417,25 +431,27 @@ Membership Plans
 <li>Ultrasound Services</li>
 </ul>
 
-<a class="btn btn-light" href="#join">
+<a class="btn ghost" href="#">
 Get Smart Card
 </a>
 
 </div>
 
 <div class="plan elite">
-<h3>SampoornCare Elite Health Card</h3>
+<span class="ribbon">Premium Health Membership</span>
+
+<h3>Elite Health Card</h3>
+
 <div class="price">₹100</div>
-<p style="color:#fff">1 Year Validity</p>
 
 <ul>
 <li>Doctor Consultation & OPD</li>
-<li>Ward & Room Charges</li>
-<li>Tests & Diagnostics</li>
-<li>Surgery & OT Benefits</li>
+<li>Room / Bed Charges</li>
+<li>Diagnostics & Surgery Benefits</li>
+<li>Priority Support</li>
 </ul>
 
-<a class="btn btn-light" href="#join">
+<a class="btn ghost" href="#">
 Get Elite Card
 </a>
 
@@ -445,17 +461,16 @@ Get Elite Card
 </div>
 </section>
 
-<!-- COMPARISON -->
+
 <section id="compare">
 <div class="container">
-
-<h2 style="text-align:center;font-size:44px">
-Membership Comparison
+<h2 style="font-size:52px;text-align:center">
+Compare Plans
 </h2>
 
-<div class="table-wrap" style="margin-top:30px">
-
+<div class="compare" style="margin-top:35px">
 <table>
+
 <tr>
 <th>Features</th>
 <th>Smart ₹50</th>
@@ -463,120 +478,67 @@ Membership Comparison
 </tr>
 
 <tr>
-<td>Medical Store Discount</td>
-<td class="check">✔</td>
-<td class="check">✔</td>
+<td>Medical Discount</td>
+<td>✔</td>
+<td>✔</td>
 </tr>
 
 <tr>
-<td>Agriculture Benefits</td>
-<td class="check">✔</td>
-<td class="check">✔</td>
+<td>Diagnostics</td>
+<td>✔</td>
+<td>✔</td>
 </tr>
 
 <tr>
-<td>Diagnostic Tests</td>
-<td class="check">✔</td>
-<td class="check">✔</td>
+<td>Hospital OPD</td>
+<td>—</td>
+<td>✔</td>
 </tr>
 
 <tr>
-<td>Hospital OPD Discount</td>
-<td class="cross">✖</td>
-<td class="check">✔</td>
-</tr>
-
-<tr>
-<td>Room/Bed Charges</td>
-<td class="cross">✖</td>
-<td class="check">✔</td>
-</tr>
-
-<tr>
-<td>Surgery Discount</td>
-<td class="cross">✖</td>
-<td class="check">✔</td>
+<td>Surgery Support</td>
+<td>—</td>
+<td>✔</td>
 </tr>
 
 </table>
-
 </div>
 
 </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section id="how">
-<div class="container">
 
-<h2 style="text-align:center;font-size:44px">
-How Membership Works
-</h2>
-
-<div class="steps" style="margin-top:35px">
-
-<div class="card">
-<div class="icon">1️⃣</div>
-<h3>Apply Membership</h3>
-<p>Register online or through a field worker.</p>
-</div>
-
-<div class="card">
-<div class="icon">2️⃣</div>
-<h3>Get Your Card</h3>
-<p>Receive virtual or physical membership card.</p>
-</div>
-
-<div class="card">
-<div class="icon">3️⃣</div>
-<h3>Use Partner Services</h3>
-<p>Use benefits at partner network locations.</p>
-</div>
-
-<div class="card">
-<div class="icon">4️⃣</div>
-<h3>Start Saving</h3>
-<p>Get instant discounts and reduce expenses.</p>
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- CTA -->
 <section id="join">
 <div class="container">
 <div class="cta">
 
-<h2 style="font-size:42px">
+<h2 style="font-size:56px">
 Join SampoornCare Today
 </h2>
 
-<p>
-Choose your membership and start saving with trusted services.
+<p style="color:#dbeafe">
+Choose your membership and start accessing verified benefits.
 </p>
 
-<div style="margin-top:25px">
-
-<a class="btn btn-light" href="#">
+<div style="margin-top:30px">
+<a class="btn ghost" href="#">
 Apply Now
 </a>
 
-<a class="btn btn-whatsapp"
+<a class="btn ghost"
 href="https://wa.me/919639196556">
 Talk on WhatsApp
 </a>
-
 </div>
 
 </div>
 </div>
 </section>
 
+
 <footer>
 <div class="container">
-SampoornCare Corporation Pvt Ltd • Contact: +91 9639196556
+SampoornCare Corporation Pvt Ltd • All Rights Reserved
 </div>
 </footer>
 
