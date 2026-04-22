@@ -3,172 +3,297 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SampoornCare</title>
+<title>SampoornCare Premium</title>
 
 <style>
+
+/* ================= GLOBAL ================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin:0;
-    font-family:sans-serif;
-    background:#020617;
-    color:white;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+  overflow-x: hidden;
 }
 
-/* HERO */
+h1,h2,h3 {
+  font-weight: 700;
+}
+
+/* ================= HERO ================= */
+
 .hero {
-    text-align:center;
-    padding:30px;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.highlight {
-    color:#22c55e;
-    font-weight:bold;
+.hero h1 {
+  font-size: 36px;
+  background: linear-gradient(to right, #38bdf8, #22c55e);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
-.big {
-    font-size:32px;
-    margin:10px 0;
+.price-highlight {
+  font-size: 40px;
+  margin-top: 10px;
+  color: #22c55e;
 }
 
-/* BADGE */
-.badge {
-    background:#22c55e;
-    padding:8px 15px;
-    border-radius:20px;
-    display:inline-block;
-    margin-top:10px;
-    font-weight:bold;
+.offer {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #22c55e;
+  border-radius: 30px;
+  font-weight: bold;
 }
 
-/* CARD */
+/* ================= CARD ================= */
+
+.section {
+  padding: 20px;
+}
+
 .card {
-    background:#1e293b;
-    padding:20px;
-    margin:15px;
-    border-radius:15px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 20px;
+  transition: 0.4s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
 }
 
 .price {
-    font-size:28px;
-    color:#22c55e;
-    font-weight:bold;
+  font-size: 28px;
+  color: #22c55e;
 }
 
-/* BUTTON */
 .btn {
-    display:block;
-    text-align:center;
-    padding:14px;
-    background:#25D366;
-    border-radius:10px;
-    color:white;
-    text-decoration:none;
-    margin-top:10px;
-    font-weight:bold;
+  display: block;
+  margin-top: 15px;
+  padding: 14px;
+  text-align: center;
+  background: linear-gradient(to right, #22c55e, #16a34a);
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
 }
 
-/* URGENCY */
-.timer {
-    background:red;
-    padding:10px;
-    text-align:center;
-    font-weight:bold;
+/* ================= TABLE ================= */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-/* POPUP */
-.popup {
-    position:fixed;
-    bottom:80px;
-    left:20px;
-    background:#22c55e;
-    padding:10px;
-    border-radius:10px;
-    display:none;
+.table th, .table td {
+  border: 1px solid #334155;
+  padding: 12px;
+  text-align: center;
 }
 
-/* NAV */
+/* ================= TESTIMONIAL ================= */
+
+.testimonial {
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+/* ================= FAQ ================= */
+
+.faq {
+  margin-bottom: 10px;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+/* ================= STICKY ================= */
+
+.sticky {
+  position: fixed;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
+
+.sticky a {
+  display: block;
+  padding: 15px;
+  text-align: center;
+  background: #25D366;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ================= NAV ================= */
+
 .nav {
-    position:fixed;
-    bottom:0;
-    width:100%;
-    background:#0f172a;
-    display:flex;
-    justify-content:space-around;
-    padding:10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #0f172a;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
 }
+
+/* ================= ANIMATION ================= */
+
+.fade {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="timer">
-⏳ Hurry! Offer Ending Soon
-</div>
+<!-- ================= HERO ================= -->
 
 <div class="hero">
-<h1>🔥 SampoornCare Cards</h1>
-
-<div class="big">
-Only <span class="highlight">₹50</span> & <span class="highlight">₹100</span>
+  <h1>SampoornCare Cards</h1>
+  <div class="price-highlight">Only ₹50 / ₹100</div>
+  <div class="offer">💥 Save Upto 50%</div>
 </div>
 
-<div class="badge">
-💥 Save Upto 50% on Services
+<!-- ================= CARDS ================= -->
+
+<div class="section fade">
+  <div class="card">
+    <h2>Smart Card</h2>
+    <div class="price">₹50</div>
+    <p>✔ Basic Services</p>
+    <p>✔ Verified Vendors</p>
+    <p>✔ Fast Support</p>
+
+    <a href="https://wa.me/91XXXXXXXXXX?text=Smart%20Card" class="btn">
+      Get Smart
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>Elite Health Card</h2>
+    <div class="price">₹100</div>
+    <p>✔ Health Services</p>
+    <p>✔ Priority Support</p>
+    <p>✔ Extra Discounts</p>
+
+    <a href="https://wa.me/91XXXXXXXXXX?text=Elite%20Card" class="btn">
+      Get Elite
+    </a>
+  </div>
 </div>
 
-<p>Ab har zarurat ka solution ek hi card me 💳</p>
+<!-- ================= COMPARISON ================= -->
+
+<div class="section fade">
+  <h2>Compare</h2>
+
+  <table class="table">
+    <tr>
+      <th>Feature</th>
+      <th>Smart</th>
+      <th>Elite</th>
+    </tr>
+    <tr>
+      <td>Services</td>
+      <td>✔</td>
+      <td>✔✔</td>
+    </tr>
+    <tr>
+      <td>Health</td>
+      <td>❌</td>
+      <td>✔</td>
+    </tr>
+    <tr>
+      <td>Support</td>
+      <td>Normal</td>
+      <td>Priority</td>
+    </tr>
+  </table>
 </div>
 
-<!-- SMART -->
-<div class="card">
-<h2>Smart Card</h2>
-<div class="price">Only ₹50</div>
-<p>✔ Basic Services + Support</p>
-<p>✔ Verified Vendors</p>
+<!-- ================= TESTIMONIAL ================= -->
 
-<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20I%20want%20Smart%20Card" class="btn">
-👉 Get Smart Card Now
-</a>
+<div class="section fade">
+  <h2>Users Love It</h2>
+
+  <div class="testimonial">"₹100 me bahut bada benefit mila"</div>
+  <div class="testimonial">"Fast service and trusted vendors"</div>
 </div>
 
-<!-- ELITE -->
-<div class="card">
-<h2>Elite Health Card</h2>
-<div class="price">Only ₹100</div>
-<p>✔ Health + Priority Support</p>
-<p>✔ Extra Discounts</p>
+<!-- ================= FAQ ================= -->
 
-<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20I%20want%20Elite%20Card" class="btn">
-👉 Get Elite Card Now
-</a>
+<div class="section fade">
+  <h2>FAQ</h2>
+
+  <div class="faq">Q: Card ka use kya hai? <br> A: Services + savings</div>
+  <div class="faq">Q: Validity? <br> A: 1 Year</div>
 </div>
 
-<!-- FINAL CTA -->
-<div class="hero">
-<h2>🚀 Limited Time Offer</h2>
-<p>Abhi join karo aur turant benefits pao</p>
+<!-- ================= FINAL CTA ================= -->
 
-<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20I%20want%20SampoornCare%20Card" class="btn">
-💬 WhatsApp Now
-</a>
+<div class="section fade">
+  <h2>Start Now</h2>
+  <a href="https://wa.me/91XXXXXXXXXX?text=I%20want%20Card" class="btn">
+    WhatsApp Now
+  </a>
 </div>
 
-<div class="popup" id="popup">
-🔥 Someone just saved 50% using Elite Card!
+<!-- ================= STICKY ================= -->
+
+<div class="sticky">
+  <a href="https://wa.me/91XXXXXXXXXX">💬 Chat Now</a>
 </div>
+
+<!-- ================= NAV ================= -->
 
 <div class="nav">
-<div>🏠 Home</div>
-<div>💳 Cards</div>
-<div>📞 Contact</div>
+  <div>🏠 Home</div>
+  <div>💳 Cards</div>
+  <div>📞 Contact</div>
 </div>
 
+<!-- ================= SCRIPT ================= -->
+
 <script>
-// POPUP
-setInterval(()=>{
-    let p = document.getElementById("popup");
-    p.style.display="block";
-    setTimeout(()=>p.style.display="none",3000);
-},8000);
+
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  faders.forEach(el => {
+    let pos = el.getBoundingClientRect().top;
+    if(pos < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+
 </script>
 
 </body>
