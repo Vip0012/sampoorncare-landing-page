@@ -2,545 +2,174 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SampoornCare Premium Membership</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SampoornCare</title>
 
 <style>
-:root{
---bg:#07111f;
---card:#101d31;
---line:rgba(255,255,255,.08);
---text:#eef4ff;
---muted:#9fb0c8;
---grad1:linear-gradient(135deg,#00c6ff,#0072ff);
---grad2:linear-gradient(135deg,#22c55e,#14b8a6);
---grad3:linear-gradient(135deg,#7c3aed,#2563eb);
---shadow:0 20px 60px rgba(0,0,0,.35);
---radius:24px;
-}
-
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0;
-font-family:Inter,sans-serif;
-background:
-radial-gradient(circle at 20% 20%,rgba(0,114,255,.15),transparent 30%),
-radial-gradient(circle at 80% 10%,rgba(124,58,237,.18),transparent 30%),
-#07111f;
-color:var(--text);
-}
-
-.container{
-width:min(1180px,92%);
-margin:auto;
-}
-
-section{
-padding:90px 0;
-}
-
-h1,h2,h3{
-line-height:1.1;
-margin:0 0 14px;
-}
-
-p{
-color:var(--muted);
-}
-
-/* NAV */
-nav{
-position:sticky;
-top:0;
-backdrop-filter:blur(14px);
-background:rgba(7,17,31,.7);
-border-bottom:1px solid var(--line);
-z-index:999;
-}
-
-.nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:16px 0;
-}
-
-.logo{
-font-size:30px;
-font-weight:900;
-background:var(--grad2);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-.menu{
-display:flex;
-gap:30px;
-}
-
-.menu a{
-color:#dbeafe;
-font-weight:600;
-text-decoration:none;
-}
-
-.btn{
-display:inline-block;
-padding:15px 26px;
-border-radius:14px;
-font-weight:800;
-text-decoration:none;
-transition:.3s;
-}
-
-.btn:hover{
-transform:translateY(-3px);
-}
-
-.primary{
-background:var(--grad1);
-color:white;
-box-shadow:0 10px 30px rgba(0,114,255,.3);
-}
-
-.ghost{
-border:1px solid var(--line);
-color:white;
+body {
+    margin:0;
+    font-family:sans-serif;
+    background:#020617;
+    color:white;
 }
 
 /* HERO */
-.hero{
-padding-top:120px;
+.hero {
+    text-align:center;
+    padding:30px;
 }
 
-.hero-grid{
-display:grid;
-grid-template-columns:1.1fr .9fr;
-gap:55px;
-align-items:center;
+.highlight {
+    color:#22c55e;
+    font-weight:bold;
 }
 
-.tag{
-display:inline-block;
-padding:10px 16px;
-border:1px solid var(--line);
-border-radius:30px;
-margin-bottom:20px;
+.big {
+    font-size:32px;
+    margin:10px 0;
 }
 
-.hero h1{
-font-size:68px;
-font-weight:900;
+/* BADGE */
+.badge {
+    background:#22c55e;
+    padding:8px 15px;
+    border-radius:20px;
+    display:inline-block;
+    margin-top:10px;
+    font-weight:bold;
 }
 
-.hero p{
-font-size:20px;
-max-width:680px;
+/* CARD */
+.card {
+    background:#1e293b;
+    padding:20px;
+    margin:15px;
+    border-radius:15px;
 }
 
-.hero-box{
-background:rgba(16,29,49,.8);
-backdrop-filter:blur(14px);
-border:1px solid var(--line);
-padding:34px;
-border-radius:28px;
-box-shadow:var(--shadow);
+.price {
+    font-size:28px;
+    color:#22c55e;
+    font-weight:bold;
 }
 
-.metric{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-margin-top:25px;
+/* BUTTON */
+.btn {
+    display:block;
+    text-align:center;
+    padding:14px;
+    background:#25D366;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
+    margin-top:10px;
+    font-weight:bold;
 }
 
-.metric div{
-background:#0d182b;
-padding:22px;
-border-radius:18px;
-text-align:center;
-border:1px solid var(--line);
+/* URGENCY */
+.timer {
+    background:red;
+    padding:10px;
+    text-align:center;
+    font-weight:bold;
 }
 
-.metric strong{
-display:block;
-font-size:28px;
+/* POPUP */
+.popup {
+    position:fixed;
+    bottom:80px;
+    left:20px;
+    background:#22c55e;
+    padding:10px;
+    border-radius:10px;
+    display:none;
 }
 
-/* BENEFITS */
-.grid3{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:26px;
-}
-
-.glass{
-background:rgba(16,29,49,.75);
-border:1px solid var(--line);
-backdrop-filter:blur(12px);
-border-radius:26px;
-padding:34px;
-box-shadow:var(--shadow);
-}
-
-.icon{
-width:68px;
-height:68px;
-border-radius:18px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-margin-bottom:18px;
-background:var(--grad1);
-}
-
-/* PLANS */
-.plans{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:28px;
-}
-
-.plan{
-padding:38px;
-border-radius:30px;
-box-shadow:var(--shadow);
-color:white;
-}
-
-.smart{
-background:var(--grad2);
-}
-
-.elite{
-background:var(--grad3);
-}
-
-.price{
-font-size:72px;
-font-weight:900;
-margin:18px 0;
-}
-
-ul{
-padding-left:20px;
-}
-
-li{
-margin:14px 0;
-}
-
-.ribbon{
-display:inline-block;
-background:rgba(255,255,255,.18);
-padding:8px 14px;
-border-radius:20px;
-font-size:14px;
-font-weight:700;
-}
-
-/* Comparison */
-.compare{
-overflow:auto;
-border-radius:26px;
-box-shadow:var(--shadow);
-border:1px solid var(--line);
-}
-
-table{
-width:100%;
-border-collapse:collapse;
-min-width:760px;
-background:#0d182b;
-}
-
-th{
-background:#12233d;
-padding:22px;
-text-align:left;
-}
-
-td{
-padding:20px;
-border-top:1px solid var(--line);
-}
-
-/* CTA */
-.cta{
-text-align:center;
-padding:70px;
-border-radius:34px;
-background:linear-gradient(135deg,#0d6efd,#7c3aed);
-box-shadow:var(--shadow);
-}
-
-/* FOOTER */
-footer{
-border-top:1px solid var(--line);
-padding:40px 0;
-color:#94a3b8;
-margin-top:60px;
-}
-
-/* mobile */
-@media(max-width:950px){
-.hero-grid,.plans,.grid3{
-grid-template-columns:1fr;
-}
-.hero h1{
-font-size:46px;
-}
-.menu{
-display:none;
-}
+/* NAV */
+.nav {
+    position:fixed;
+    bottom:0;
+    width:100%;
+    background:#0f172a;
+    display:flex;
+    justify-content:space-around;
+    padding:10px;
 }
 </style>
 </head>
+
 <body>
 
-<nav>
-<div class="container nav">
-<div class="logo">SampoornCare</div>
-
-<div class="menu">
-<a href="#benefits">Benefits</a>
-<a href="#plans">Plans</a>
-<a href="#compare">Compare</a>
+<div class="timer">
+⏳ Hurry! Offer Ending Soon
 </div>
 
-<a class="btn primary" href="#join">
-Join Now
-</a>
+<div class="hero">
+<h1>🔥 SampoornCare Cards</h1>
 
-</div>
-</nav>
-
-
-<section class="hero">
-<div class="container hero-grid">
-
-<div>
-<span class="tag">
-Premium Membership Ecosystem
-</span>
-
-<h1>
-One Card.<br>
-Trusted Savings.<br>
-Premium Benefits.
-</h1>
-
-<p>
-Affordable membership access for medicines, diagnostics, hospital support and agriculture benefits.
-</p>
-
-<div style="margin-top:28px">
-<a class="btn primary" href="#plans">Explore Plans</a>
-<a class="btn ghost" href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+<div class="big">
+Only <span class="highlight">₹50</span> & <span class="highlight">₹100</span>
 </div>
 
-<div class="metric">
-<div>
-<strong>50%</strong>
-Savings
+<div class="badge">
+💥 Save Upto 50% on Services
 </div>
 
-<div>
-<strong>1 Year</strong>
-Validity
+<p>Ab har zarurat ka solution ek hi card me 💳</p>
 </div>
 
-<div>
-<strong>24/7</strong>
-Support
-</div>
-</div>
+<!-- SMART -->
+<div class="card">
+<h2>Smart Card</h2>
+<div class="price">Only ₹50</div>
+<p>✔ Basic Services + Support</p>
+<p>✔ Verified Vendors</p>
 
-</div>
-
-<div class="hero-box">
-<h3>Membership Highlights</h3>
-
-<div class="glass">
-✔ Medical Store Benefits<br><br>
-✔ Diagnostic Discounts<br><br>
-✔ Hospital Benefits (Elite)<br><br>
-✔ Agriculture Support
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<section id="benefits">
-<div class="container">
-<h2 style="font-size:52px;text-align:center">
-Why Members Choose SampoornCare
-</h2>
-
-<div class="grid3" style="margin-top:40px">
-
-<div class="glass">
-<div class="icon">💊</div>
-<h3>Medicine Savings</h3>
-<p>Save on partner medical stores and routine healthcare spending.</p>
-</div>
-
-<div class="glass">
-<div class="icon">🏥</div>
-<h3>Hospital Discounts</h3>
-<p>Elite members access advanced health benefits and support.</p>
-</div>
-
-<div class="glass">
-<div class="icon">🌱</div>
-<h3>Agriculture Benefits</h3>
-<p>Support on inputs and allied services through partners.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-
-<section id="plans">
-<div class="container">
-<h2 style="font-size:52px;text-align:center">
-Membership Plans
-</h2>
-
-<div class="plans" style="margin-top:40px">
-
-<div class="plan smart">
-<span class="ribbon">Smart Membership</span>
-
-<h3>SampoornCare Smart Card</h3>
-
-<div class="price">₹50</div>
-
-<ul>
-<li>Medical Store Discount</li>
-<li>Agriculture Products</li>
-<li>Diagnostic Lab Tests</li>
-<li>Ultrasound Services</li>
-</ul>
-
-<a class="btn ghost" href="#">
-Get Smart Card
-</a>
-
-</div>
-
-<div class="plan elite">
-<span class="ribbon">Premium Health Membership</span>
-
-<h3>Elite Health Card</h3>
-
-<div class="price">₹100</div>
-
-<ul>
-<li>Doctor Consultation & OPD</li>
-<li>Room / Bed Charges</li>
-<li>Diagnostics & Surgery Benefits</li>
-<li>Priority Support</li>
-</ul>
-
-<a class="btn ghost" href="#">
-Get Elite Card
-</a>
-
-</div>
-
-</div>
-</div>
-</section>
-
-
-<section id="compare">
-<div class="container">
-<h2 style="font-size:52px;text-align:center">
-Compare Plans
-</h2>
-
-<div class="compare" style="margin-top:35px">
-<table>
-
-<tr>
-<th>Features</th>
-<th>Smart ₹50</th>
-<th>Elite ₹100</th>
-</tr>
-
-<tr>
-<td>Medical Discount</td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-
-<tr>
-<td>Diagnostics</td>
-<td>✔</td>
-<td>✔</td>
-</tr>
-
-<tr>
-<td>Hospital OPD</td>
-<td>—</td>
-<td>✔</td>
-</tr>
-
-<tr>
-<td>Surgery Support</td>
-<td>—</td>
-<td>✔</td>
-</tr>
-
-</table>
-</div>
-
-</div>
-</section>
-
-
-<section id="join">
-<div class="container">
-<div class="cta">
-
-<h2 style="font-size:56px">
-Join SampoornCare Today
-</h2>
-
-<p style="color:#dbeafe">
-Choose your membership and start accessing verified benefits.
-</p>
-
-<div style="margin-top:30px">
-<a class="btn ghost" href="#">
-Apply Now
-</a>
-
-<a class="btn ghost"
-href="https://wa.me/919639196556">
-Talk on WhatsApp
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20I%20want%20Smart%20Card" class="btn">
+👉 Get Smart Card Now
 </a>
 </div>
 
-</div>
-</div>
-</section>
+<!-- ELITE -->
+<div class="card">
+<h2>Elite Health Card</h2>
+<div class="price">Only ₹100</div>
+<p>✔ Health + Priority Support</p>
+<p>✔ Extra Discounts</p>
 
-
-<footer>
-<div class="container">
-SampoornCare Corporation Pvt Ltd • All Rights Reserved
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20I%20want%20Elite%20Card" class="btn">
+👉 Get Elite Card Now
+</a>
 </div>
-</footer>
+
+<!-- FINAL CTA -->
+<div class="hero">
+<h2>🚀 Limited Time Offer</h2>
+<p>Abhi join karo aur turant benefits pao</p>
+
+<a href="https://wa.me/91XXXXXXXXXX?text=Hi%20I%20want%20SampoornCare%20Card" class="btn">
+💬 WhatsApp Now
+</a>
+</div>
+
+<div class="popup" id="popup">
+🔥 Someone just saved 50% using Elite Card!
+</div>
+
+<div class="nav">
+<div>🏠 Home</div>
+<div>💳 Cards</div>
+<div>📞 Contact</div>
+</div>
+
+<script>
+// POPUP
+setInterval(()=>{
+    let p = document.getElementById("popup");
+    p.style.display="block";
+    setTimeout(()=>p.style.display="none",3000);
+},8000);
+</script>
 
 </body>
 </html>
