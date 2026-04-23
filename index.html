@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>SampoornCare Corporation Pvt Ltd</title>
+<title>SAMPOORNCARE CORPORATION PVT LTD</title>
 
 <style>
 
@@ -15,78 +15,124 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(to bottom,#eef7ff,#ffffff);
+background:#f5fbff;
 color:#222;
 line-height:1.6;
 }
 
-/* HERO */
+/* Blinking Offer Strip */
+
+.top-strip{
+background:#d40000;
+color:#fff;
+text-align:center;
+padding:14px;
+font-weight:bold;
+font-size:22px;
+animation:blink 1.1s infinite;
+position:sticky;
+top:0;
+z-index:999;
+}
+
+@keyframes blink{
+50%{
+opacity:.55;
+}
+}
+
+/* Hero */
 
 .hero{
 background:linear-gradient(135deg,#0f4c81,#15b392);
 color:#fff;
 text-align:center;
-padding:90px 30px;
+padding:80px 25px;
 }
 
 .hero h1{
-font-size:56px;
-font-weight:800;
-margin-bottom:25px;
+font-size:54px;
+margin-bottom:20px;
 }
 
 .hero p{
+font-size:23px;
 max-width:1000px;
 margin:auto;
-font-size:23px;
 }
 
 .offer{
-display:inline-block;
-margin-top:30px;
 background:#FFD700;
-color:#000;
+display:inline-block;
 padding:18px 42px;
 border-radius:50px;
-font-size:30px;
+font-size:28px;
+font-weight:800;
+color:#000;
+margin-top:30px;
+}
+
+/* Countdown */
+
+.timer-box{
+margin-top:35px;
+background:#fff;
+display:inline-block;
+padding:30px 45px;
+border-radius:20px;
+color:#000;
+box-shadow:0 8px 25px rgba(0,0,0,.2);
+}
+
+.timer-title{
+font-size:28px;
+font-weight:bold;
+color:#c40000;
+margin-bottom:12px;
+}
+
+#countdown{
+font-size:38px;
 font-weight:800;
 }
 
-.flash{
-margin-top:35px;
-background:#ffffff;
-color:#c40000;
-display:inline-block;
-padding:18px 35px;
-border-radius:18px;
-font-size:28px;
-font-weight:bold;
-box-shadow:0 5px 20px rgba(0,0,0,.15);
-}
+/* Social proof */
 
-.btn{
-display:inline-block;
+.social-proof{
 margin-top:30px;
-padding:18px 42px;
-background:#fff;
-color:#0f4c81;
-text-decoration:none;
+font-size:30px;
 font-weight:bold;
+background:#ffffff;
+color:#0f4c81;
+display:inline-block;
+padding:15px 35px;
 border-radius:50px;
 }
 
-/* Sections */
+/* Button */
+
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:18px 42px;
+background:#fff;
+color:#0f4c81;
+font-weight:bold;
+text-decoration:none;
+border-radius:50px;
+}
+
+/* Section */
 
 section{
-padding:80px 8%;
+padding:75px 8%;
 }
 
 .heading{
 text-align:center;
-font-size:44px;
+font-size:42px;
+margin-bottom:50px;
 color:#0f4c81;
-margin-bottom:55px;
-font-weight:800;
 }
 
 .grid{
@@ -99,81 +145,98 @@ gap:35px;
 background:white;
 padding:35px;
 border-radius:25px;
-box-shadow:0 8px 30px rgba(0,0,0,.08);
+box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
 .card h3{
-font-size:32px;
+font-size:30px;
 color:#15b392;
-margin-bottom:15px;
 }
 
-.price{
-font-size:42px;
-font-weight:800;
-color:#0f4c81;
-margin-bottom:10px;
-}
-
-.oldprice{
+.old{
 text-decoration:line-through;
 color:red;
 font-size:24px;
-font-weight:bold;
+margin-top:15px;
 }
 
-.badge{
-background:#ffd700;
-display:inline-block;
-padding:8px 18px;
-border-radius:30px;
-font-weight:bold;
-margin:15px 0;
+.price{
+font-size:44px;
+font-weight:800;
+color:#0f4c81;
 }
 
 li{
-margin-bottom:14px;
-font-size:18px;
+margin-bottom:12px;
 }
 
-/* Attraction block */
+/* Lead Form */
 
-.attract{
-background:#fff7d6;
-border-left:8px solid #ff9800;
-padding:35px;
-border-radius:20px;
-font-size:24px;
-font-weight:bold;
-line-height:2;
-box-shadow:0 8px 25px rgba(0,0,0,.07);
-}
-
-/* CTA */
-
-.cta{
-background:linear-gradient(135deg,#15b392,#0f4c81);
-text-align:center;
-color:white;
-}
-
-.cta h2{
-font-size:52px;
-margin-bottom:20px;
-}
-
-.cta p{
-font-size:24px;
-max-width:900px;
+.form-box{
+max-width:700px;
 margin:auto;
+background:white;
+padding:45px;
+border-radius:30px;
+box-shadow:0 8px 35px rgba(0,0,0,.08);
 }
+
+input{
+width:100%;
+padding:18px;
+margin-bottom:18px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:17px;
+}
+
+button{
+width:100%;
+padding:18px;
+border:none;
+background:#15b392;
+color:white;
+font-size:22px;
+font-weight:bold;
+border-radius:15px;
+}
+
+/* Floating Apply */
+
+.apply-sticky{
+position:fixed;
+bottom:95px;
+right:25px;
+background:#0f4c81;
+color:#fff;
+padding:18px 25px;
+border-radius:60px;
+text-decoration:none;
+font-weight:bold;
+box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+/* WhatsApp */
+
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+background:#25D366;
+color:white;
+padding:18px 25px;
+border-radius:60px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* Footer */
 
 footer{
 background:#071f49;
-color:#fff;
+color:white;
 text-align:center;
 padding:30px;
-font-size:18px;
 }
 
 @media(max-width:768px){
@@ -186,8 +249,8 @@ font-size:38px;
 font-size:32px;
 }
 
-.cta h2{
-font-size:34px;
+#countdown{
+font-size:28px;
 }
 
 }
@@ -198,6 +261,12 @@ font-size:34px;
 <body>
 
 
+<div class="top-strip">
+पहले 10,000 ग्राहकों के लिए लॉन्च ऑफर — Smart Card ₹50 | Elite Card ₹100
+</div>
+
+
+
 <section class="hero">
 
 <h1>
@@ -205,69 +274,52 @@ SAMPOORNCARE CORPORATION PVT LTD
 </h1>
 
 <p>
-अब स्वास्थ्य, बचत और परिवार सुरक्षा का स्मार्ट समाधान।
-मेडिकल स्टोर, डायग्नोस्टिक लैब, एग्रीकल्चर सपोर्ट, अल्ट्रासाउंड,
-हॉस्पिटल OPD, Surgery, Medicines, Tests सहित अनेक सेवाओं पर
-UPTO 50% तक Discount।
+मेडिकल स्टोर, डायग्नोस्टिक लैब, एग्रीकल्चर सपोर्ट,
+अल्ट्रासाउंड, OPD, Surgery, Medicines, Tests पर
+UPTO 50% तक Discount
 </p>
 
 <div class="offer">
-UPTO 50% तक डिस्काउंट
+₹100 वाला Smart Card केवल ₹50 में
+<br>
+₹200 वाला Elite Card केवल ₹100 में
+</div>
+
+
+<div class="timer-box">
+
+<div class="timer-title">
+ऑफर समाप्त होने में समय:
+</div>
+
+<div id="countdown">
+12:00:00
+</div>
+
+</div>
+
+
+<br>
+
+<div class="social-proof">
+आज 327 लोगों ने आवेदन किया
 </div>
 
 <br>
 
-<div class="flash">
-पहले 10,000 ग्राहकों के लिए विशेष लॉन्च ऑफर
-</div>
-
-<br>
-
-<a href="#" class="btn">
-अभी कार्ड बनवाएं
+<a href="#apply" class="btn">
+अभी आवेदन करें
 </a>
 
 </section>
 
 
 
-<section>
-
-<h2 class="heading">
-विशेष लॉन्च ऑफर
-</h2>
-
-<div class="attract">
-
-₹100 कीमत वाला Smart Card अभी केवल ₹50 में
-
-<br>
-
-₹200 कीमत वाला Elite Health Card अभी केवल ₹100 में
-
-<br>
-
-अभी मौका है अपने साथ-साथ अपने परिवार का भी कार्ड बनवाएं
-
-<br>
-
-1 व्यक्ति पूरे साल Unlimited Times तक उपयोग कर सकता है
-
-<br>
-
-हर उपयोग पर UPTO 50% तक Discount
-
-</div>
-
-</section>
-
-
-
 
 <section>
 
 <h2 class="heading">
-सदस्यता योजनाएँ
+Membership Benefits
 </h2>
 
 <div class="grid">
@@ -277,38 +329,24 @@ UPTO 50% तक डिस्काउंट
 
 <h3>Smart Card</h3>
 
-<div class="oldprice">
+<div class="old">
 MRP ₹100
 </div>
 
 <div class="price">
-Only ₹50
-</div>
-
-<div class="badge">
-Limited Offer
+₹50
 </div>
 
 <ul>
-
-<li>मेडिकल स्टोर पर छूट</li>
-
-<li>डायग्नोस्टिक लैब Discount</li>
-
-<li>एग्रीकल्चर सपोर्ट लाभ</li>
-
-<li>अल्ट्रासाउंड सेवाओं पर Discount</li>
-
-<li>UPTO 50% तक छूट</li>
-
-<li>1 वर्ष वैधता</li>
-
-<li>Unlimited Usage</li>
-
+<li>मेडिकल स्टोर Discount</li>
+<li>Diagnostic Lab Discount</li>
+<li>Agriculture Support</li>
+<li>Ultrasound Benefits</li>
+<li>UPTO 50% तक Discount</li>
+<li>Unlimited Usage पूरे साल</li>
 </ul>
 
 </div>
-
 
 
 
@@ -316,40 +354,24 @@ Limited Offer
 
 <h3>Elite Health Card</h3>
 
-<div class="oldprice">
+<div class="old">
 MRP ₹200
 </div>
 
 <div class="price">
-Only ₹100
-</div>
-
-<div class="badge">
-Premium Offer
+₹100
 </div>
 
 <ul>
-
 <li>Smart Card की सभी सुविधाएं</li>
-
-<li>हॉस्पिटल OPD Discount</li>
-
-<li>Surgery Charges पर लाभ</li>
-
-<li>Medicines पर Discount</li>
-
-<li>Tests पर छूट</li>
-
-<li>विशेष प्रीमियम बेनिफिट</li>
-
+<li>OPD Discount</li>
+<li>Surgery Charges Benefits</li>
+<li>Medicines Discount</li>
+<li>Tests Discount</li>
 <li>UPTO 50% तक Discount</li>
-
-<li>Unlimited Usage पूरे साल</li>
-
 </ul>
 
 </div>
-
 
 </div>
 
@@ -361,61 +383,22 @@ Premium Offer
 <section>
 
 <h2 class="heading">
-क्यों लें यह कार्ड?
+अभी Lead Submit करें
 </h2>
 
-<div class="attract">
+<div class="form-box" id="apply">
 
-कम शुल्क में अधिक लाभ
+<input type="text" placeholder="पूरा नाम">
 
-<br>
+<input type="tel" placeholder="मोबाइल नंबर">
 
-एक कार्ड — अनेक सेवाओं पर बचत
+<input type="text" placeholder="शहर / जिला">
 
-<br>
-
-पूरे परिवार के लिए उपयोगी
-
-<br>
-
-Transparent एवं Verified Services
-
-<br>
-
-आज का ऑफर सीमित ग्राहकों के लिए
+<button>
+Apply Now
+</button>
 
 </div>
-
-</section>
-
-
-
-
-<section class="cta">
-
-<h2>
-आज ही सदस्य बनें
-</h2>
-
-<p>
-
-₹100 वाला Smart Card केवल ₹50 में
-
-<br><br>
-
-₹200 वाला Elite Health Card केवल ₹100 में
-
-<br><br>
-
-पहले 10,000 ग्राहकों के लिए विशेष अवसर
-
-</p>
-
-<br><br>
-
-<a href="#" class="btn">
-Apply Now
-</a>
 
 </section>
 
@@ -426,6 +409,47 @@ Apply Now
 © SAMPOORNCARE CORPORATION PVT LTD
 
 </footer>
+
+
+
+<a href="#apply" class="apply-sticky">
+Apply Now
+</a>
+
+<a href="https://wa.me/919999999999" class="whatsapp">
+WhatsApp
+</a>
+
+
+<script>
+
+/* Countdown Timer */
+
+let time=43200;
+
+setInterval(function(){
+
+let hrs=Math.floor(time/3600);
+
+let mins=Math.floor((time%3600)/60);
+
+let sec=time%60;
+
+document.getElementById("countdown").innerHTML=
+
+hrs+":"+
+
+String(mins).padStart(2,'0')+":"+
+
+String(sec).padStart(2,'0');
+
+if(time>0){
+time--;
+}
+
+},1000);
+
+</script>
 
 
 </body>
